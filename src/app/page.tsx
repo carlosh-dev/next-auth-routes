@@ -1,17 +1,35 @@
-import { Inter } from "next/font/google"
+'use client'
+import { Roboto_Mono } from "next/font/google"
+import { MouseEvent } from "react"
+import { LogIn, User } from "react-feather"
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto_mono = Roboto_Mono({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const handlelogin = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log('login')
+  }
   return (
     <div className="w-full h-full flex flex-col justify-center items-center bg-zinc-900">
 
-      <form className="flex flex-col justify-center items-center gap-4 p-5 w-96 bg-zinc-700 rounded-lg">
-        <p className="text-white font-bold">Faça Login</p>
-        <input type="text" className="p-2 w-full h-8 rounded-sm" />
+      <form className="flex flex-col justify-center items-center gap-4 p-5 w-96 bg-zinc-800 rounded-lg shadow-md shadow-black">
+        <span className="flex gap-3 items-center">
+          <User size={20} className="text-purple-500" />
+          <p className={`text-gray-100 font-medium ${roboto_mono}`}>simple login</p>
+        </span>
+
+        <input type="email" className="p-2 w-full h-8 rounded-sm" />
+
         <input type="password" className="p-2 w-full h-8 rounded-sm" />
-        <button className={`px-8 py-4 w-full rounded-md text-white font-bold bg-purple-800 hover:bg-purple-700  ${inter}`}>
-          ENTRAR
+
+        <button
+          type="submit"
+          className={`flex items-center justify-center gap-2 px-8 py-4 w-full rounded-md text-gray-200 font-medium bg-purple-800 hover:bg-purple-700 transition-colors ${roboto_mono}`}
+          onClick={(e: MouseEvent<HTMLButtonElement>) => handlelogin(e)}
+        >
+          <LogIn size={20} />log in
         </button>
       </form>
     </div >

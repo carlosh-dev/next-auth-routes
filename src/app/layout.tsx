@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import './globals.css'
 
 export const metadata = {
@@ -6,14 +6,14 @@ export const metadata = {
   description: 'Only for study.',
 }
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto_mono = Roboto_Mono({ subsets: ['latin'] })
 
 export default function RootLayout({ children, }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={`w-full h-full ${inter.className}`}>
+      <body className={`w-full h-full ${roboto_mono.className}`}>
         {children}
       </body>
     </html>
