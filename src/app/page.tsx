@@ -14,15 +14,17 @@ export default function Home() {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center bg-zinc-900">
 
-      <form className="flex flex-col justify-center items-center gap-4 p-5 w-96 bg-zinc-800 rounded-lg shadow-md shadow-black">
+      <form className="flex flex-col justify-center items-center gap-4 p-5 w-auto bg-zinc-800 rounded-lg shadow-md shadow-black">
         <span className="flex gap-3 items-center">
           <User size={20} className="text-purple-500" />
-          <p className={`text-gray-100 font-medium ${roboto_mono}`}>simple login</p>
+          <p className={`text-gray-100 font-medium ${roboto_mono}`}>
+            {"<"}<span className={"text-purple-500"}>NextjsRoutesAuth</span> varaint={"{"}<span className={"text-purple-400"}>study</span>{"}"} {"/>"}
+          </p>
         </span>
 
-        <input type="email" className="p-2 w-full h-8 rounded-sm" />
+        <input type="email" className="p-2 w-full h-8 rounded-md" />
 
-        <input type="password" className="p-2 w-full h-8 rounded-sm" />
+        <input type="password" className="p-2 w-full h-8 rounded-md" />
 
         <button
           type="submit"
